@@ -7,7 +7,7 @@ interface CustomRequest extends Request {
   userId?: string;
 }
 dotenv.config();
-export const middleware:any = (req:CustomRequest,res:Response,next:NextFunction) => {
+export const userMiddleware:any = (req:CustomRequest,res:Response,next:NextFunction) => {
     const token = req.headers["authorization"];
     //@ts-ignore
     const decoded = jwt.verify(token,process.env.JWT_PASS)
